@@ -1,0 +1,33 @@
+# TTY, where emptty will start.
+TTY_NUMBER=7
+
+# Enables switching to defined TTY number.
+SWITCH_TTY=true
+
+# Enables printing of /etc/issue in daemon mode.
+PRINT_ISSUE=true
+
+# Enables printing of default motd, /etc/emptty/motd or /etc/emptty/motd-gen.sh.
+PRINT_MOTD=true
+
+# Preselected user, if AUTOLOGIN is enabled, this user is logged in.
+DEFAULT_USER=mitski
+
+# Enables Autologin, if DEFAULT_USER is defined and part of nopasswdlogin group. Possible values are "true" or "false".
+AUTOLOGIN=true
+
+# The default session used, if Autologin is enabled. If session is not found in list of session, it proceeds to manual selection.
+AUTOLOGIN_SESSION=labwc
+
+# Starts desktop with calling "dbus-launch".
+# Explicitly false for systemd compatibility in CachyOS
+DBUS_LAUNCH=false
+
+# Starts Xorg desktop with calling "~/.xinitrc" script.
+XINITRC_LAUNCH=false
+
+# Prints available WM/DE each on new line instead of printing on single line.
+VERTICAL_SELECTION=true
+
+# If set true, environmental groups are printed to differ Xorg/Wayland/Custom/UserCustom desktops.
+IDENTIFY_ENVS=false
