@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# 1. Variables de entorno básicas para Wayland
+export XDG_CURRENT_DESKTOP=labwc
+export XDG_SESSION_TYPE=wayland
+
+# 2. Sincronizar con systemd y D-Bus (Vital para portales, portapapeles y audio)
+systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE
+
+# 3. Iniciar el entorno completo de Noctalia v5 (panel, notificaciones, wallpaper)
+noctalia &
