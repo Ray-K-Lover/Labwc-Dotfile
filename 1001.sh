@@ -6,7 +6,7 @@ echo "====================================================="
 
 # 1. Instalar dependencias mediante pacman (sin confirmación manual)
 echo "-> Instalando paquetes base..."
-sudo pacman -S --needed labwc noctalia kitty yazi pipewire wireplumber pipewire-pulse pipewire-alsa wl-clipboard xdg-desktop-portal xdg-desktop-portal-wlr emptty --noconfirm
+sudo pacman -S --needed labwc noctalia kitty yazi brave-origin pipewire wireplumber pipewire-pulse pipewire-alsa wl-clipboard xdg-desktop-portal xdg-desktop-portal-wlr emptty --noconfirm
 
 # 2. Crear directorios de configuración
 echo "-> Creando estructura de directorios..."
@@ -18,6 +18,8 @@ echo "-> Copiando dotfiles..."
 cp autostart ~/.config/labwc/
 cp environment ~/.config/labwc/
 cp rc.xml ~/.config/labwc/
+cp themerc ~/.config/labwc/
+cp menu.xml ~/.config/labwc/
 sudo cp conf /etc/emptty/conf
 
 # 4. Otorgar permisos de ejecución obligatorios
