@@ -8,15 +8,18 @@
     <reuseOutputMode>yes</reuseOutputMode>
   </core>
 
-  <!-- Theme (Minimalista base sin dependencias externas) -->
+  <!-- Theme -->
   <theme>
-    <cornerRadius>0</cornerRadius>
+    <!-- Labwc automatically reads ~/.config/labwc/themerc -->
+    <name>default</name>
+    
+    <!-- Bar layout: No icon. L=Label, I=Iconify, M=Maximize, C=Close -->
+    <titleLayout>LIMC</titleLayout>
+    
     <resistance>
       <screenEdgeStrength>20</screenEdgeStrength>
     </resistance>
     <maximizedDecoration>none</maximizedDecoration>
-    <dropShadows>no</dropShadows>
-    <dropShadowsOnTiled>no</dropShadowsOnTiled>
   </theme>
   
   <!-- Thumbnail-based window switcher -->
@@ -28,26 +31,38 @@
     <repeatRate>25</repeatRate>
     <repeatDelay>600</repeatDelay>
     
-    <!-- KeyBinds (Cero fantasmas - Solo Kitty, Yazi, Noctalia y wpctl) -->
+    <!-- KeyBinds (Kitty, Yazi, Noctalia, wpctl) -->
     <keybind key="W-t">
-      <action name="Execute" command="kitty"/>
+      <action name="Execute">
+        <command>kitty</command>
+      </action>
     </keybind>
     <keybind key="W-e">
-      <action name="Execute" command="kitty -e yazi"/>
+      <action name="Execute">
+        <command>kitty -e yazi</command>
+      </action>
     </keybind>
     <keybind key="W-r">
-      <action name="Execute" command="labwc -r"/>
+      <action name="Execute">
+        <command>labwc -r</command>
+      </action>
     </keybind>
     <keybind key="W-x">
-      <action name="Execute" command="noctalia msg panel-toggle session"/>
+      <action name="Execute">
+        <command>noctalia msg panel-toggle session</command>
+      </action>
     </keybind>
     
-    <!-- Audio (wpctl nativo en CachyOS) -->
+    <!-- Audio (wpctl natively on CachyOS) -->
     <keybind key="XF86AudioLowerVolume">
-      <action name="Execute" command="wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"/>
+      <action name="Execute">
+        <command>wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-</command>
+      </action>
     </keybind>
     <keybind key="XF86AudioRaiseVolume">
-      <action name="Execute" command="wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"/>
+      <action name="Execute">
+        <command>wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+</command>
+      </action>
     </keybind>
     
     <!-- Window Management -->
@@ -61,15 +76,21 @@
       <action name="ToggleFullscreen"/>
     </keybind>
     <keybind key="W-space">
-      <action name="Execute" command="noctalia msg panel-toggle launcher"/>
+      <action name="Execute">
+        <command>noctalia msg panel-toggle launcher</command>
+      </action>
     </keybind>
     
-    <!-- Screenshots (Nativo con Noctalia v5) -->
+    <!-- Screenshots (Noctalia v5) -->
     <keybind key="Print">
-      <action name="Execute" command="noctalia msg screenshot-region"/>
+      <action name="Execute">
+        <command>noctalia msg screenshot-region</command>
+      </action>
     </keybind>
     <keybind key="W-Print">
-      <action name="Execute" command="noctalia msg screenshot-fullscreen"/>
+      <action name="Execute">
+        <command>noctalia msg screenshot-fullscreen</command>
+      </action>
     </keybind>
     
     <!-- Navigation -->
@@ -342,19 +363,11 @@
     </context>
   </mouse>
   
-  <!-- Window Rule -->
   <placement>
     <policy>cascade</policy>
   </placement>
-  <magnifier>
-    <useFilter>yes</useFilter>
-  </magnifier>
+  
   <resize>
     <popupShow>always</popupShow>
   </resize>
-  <windowRule title="*">
-    <fixedPosition>yes</fixedPosition>
-    <center>yes</center>
-    <float>yes</float>
-  </windowRule>
 </labwc_config>
