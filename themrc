@@ -1,0 +1,10 @@
+# Desactiva los bordes redondeados (esquinas rectas estilo tiling)
+window.bounding.radius: 0
+
+# Desactiva completamente las sombras
+window.active.shadow.size: 0
+window.inactive.shadow.size: 0
+
+# Bordes en color negro puro
+window.active.border.color: #000000
+window.inactive.border.color: #000000
