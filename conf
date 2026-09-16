@@ -11,7 +11,7 @@ PRINT_ISSUE=true
 PRINT_MOTD=true
 
 # Preselected user, if AUTOLOGIN is enabled, this user is logged in.
-DEFAULT_USER=mitski
+DEFAULT_USER=sylver
 
 # Enables Autologin, if DEFAULT_USER is defined and part of nopasswdlogin group. Possible values are "true" or "false".
 AUTOLOGIN=true
